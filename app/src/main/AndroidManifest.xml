@@ -24,14 +24,18 @@
             android:value=" AIzaSyDE5vyKqF2DWfydJtAKj0m_3cA4F7eVdmk " />
 
         <activity android:name=".MapLayout">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Appointment" />
-        <activity android:name=".Vendor_SignUp"></activity>
+
+        <activity android:name=".LoginActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
+        <activity android:name=".RegisterUserActivity"></activity>
     </application>
 
 </manifest>

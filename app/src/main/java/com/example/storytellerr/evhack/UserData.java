@@ -18,10 +18,10 @@ import com.google.firebase.database.ValueEventListener;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class List extends Fragment {
+public class UserData extends Fragment {
 
 
-    public List() {
+    public UserData() {
         // Required empty public constructor
     }
     TextView tv;
