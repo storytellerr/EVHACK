@@ -309,12 +309,7 @@ public class MapLayout extends FragmentActivity implements OnMapReadyCallback,Go
         bottomSheetFragment.show(getSupportFragmentManager(), bottomSheetFragment.getTag());
         return false;
     }
-    /*private final LocationListener locationListener = new LocationListener() {
-        public void onLocationChanged(Location location) {
-            longitude = location.getLongitude();
-            latitude = location.getLatitude();
-        }
-    }*/
+
 }
 
 
