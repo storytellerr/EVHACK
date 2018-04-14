@@ -30,7 +30,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Appointment"></activity>
+        <activity android:name=".Appointment" />
+        <activity android:name=".Vendor_SignUp"></activity>
     </application>
 
 </manifest>
