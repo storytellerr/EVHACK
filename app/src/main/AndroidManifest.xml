@@ -36,6 +36,7 @@
         </activity>
 
         <activity android:name=".RegisterUserActivity"></activity>
+        <activity android:name=".Vendor_SignUp"></activity>
 
     </application>
 

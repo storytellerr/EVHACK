@@ -9,6 +9,7 @@ import android.widget.Button;
 public class LoginActivity extends AppCompatActivity {
 
     Button signup_user;
+    Button signup_vendor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +21,17 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent signup_userIntent=new Intent(LoginActivity.this,RegisterUserActivity.class);
                 startActivity(signup_userIntent);
+
+            }
+        });
+
+        signup_vendor=(Button)findViewById(R.id.btn_signupshop);
+        signup_vendor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent signup_vendor=new Intent(LoginActivity.this,Vendor_SignUp.class);
+                startActivity(signup_vendor);
+
             }
         });
 
