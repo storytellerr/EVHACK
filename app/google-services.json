@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "967392831154",
+    "firebase_url": "https://evhack-ed43c.firebaseio.com",
+    "project_id": "evhack-ed43c",
+    "storage_bucket": "evhack-ed43c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:967392831154:android:08d8016f14610a4d",
+        "android_client_info": {
+          "package_name": "com.example.storytellerr.evhack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "967392831154-g5l6bomkgahptonfsifdvtm4mhulpnn4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9NZeI_ENykxbbS0Sr-3-1mtqK16xHhBE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
