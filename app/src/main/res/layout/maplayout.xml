@@ -99,7 +99,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-            android:name="com.example.storytellerr.evhack.List"
+            android:name="com.example.storytellerr.evhack.UserData"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/map2"
             android:layout_height="match_parent"

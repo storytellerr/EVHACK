@@ -25,17 +25,17 @@
 
         <activity android:name=".MapLayout">
         </activity>
+
         <activity android:name=".Appointment" />
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".RegisterUserActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <activity android:name=".LoginActivity" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
-        <activity android:name=".RegisterUserActivity"></activity>
     </application>
 
 </manifest>

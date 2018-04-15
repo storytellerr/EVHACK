@@ -1,6 +1,7 @@
 package com.example.storytellerr.evhack;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
@@ -15,13 +16,16 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.ToolbarWidgetWrapper;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -34,10 +38,13 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -48,6 +55,8 @@ public class MapLayout extends FragmentActivity implements OnMapReadyCallback,Go
         LocationListener {
 
     private GoogleMap mMap;
+    private FirebaseAuth mAuth;
+
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
     Marker mCurrLocationMarker;
@@ -65,6 +74,9 @@ public class MapLayout extends FragmentActivity implements OnMapReadyCallback,Go
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.maplayout);
+
+        mAuth=FirebaseAuth.getInstance();
+
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Shops");
         progressBar = (ProgressBar) findViewById(R.id.progressBar1);
         progressBar2 = (ProgressBar) findViewById(R.id.progressBar2);
@@ -82,6 +94,7 @@ public class MapLayout extends FragmentActivity implements OnMapReadyCallback,Go
                 getdata();
             }
         });
+
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -276,10 +289,17 @@ public class MapLayout extends FragmentActivity implements OnMapReadyCallback,Go
 
     public void appointment(View v) {
         Toast.makeText(this,"dwd",Toast.LENGTH_LONG).show();
-
-
     }
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser == null) {
+            sendToStart();
+        }
+    }
 
     @Override
     public boolean onMarkerClick(Marker marker) {
@@ -308,6 +328,15 @@ public class MapLayout extends FragmentActivity implements OnMapReadyCallback,Go
         bottomSheetFragment.setArguments(args);
         bottomSheetFragment.show(getSupportFragmentManager(), bottomSheetFragment.getTag());
         return false;
+    }
+
+
+    private void sendToStart() {
+
+        Intent startIntent = new Intent(MapLayout.this, LoginActivity.class);
+        startActivity(startIntent);
+        finish();
+
     }
 
 }
