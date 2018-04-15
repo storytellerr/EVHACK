@@ -33,8 +33,8 @@ public class UserData extends Fragment {
 
         View v=inflater.inflate(R.layout.fragment_list, container, false);
         tv=v.findViewById(R.id.textview);
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("users").child("-L80d7KbabXwAS37uRcz");
-        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+        //mDatabase = FirebaseDatabase.getInstance().getReference().child("users").child("-L80d7KbabXwAS37uRcz");
+        /*mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                String s= dataSnapshot.getValue().toString();
@@ -45,7 +45,7 @@ public class UserData extends Fragment {
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        });
+        });*/
 
         return v;
     }
