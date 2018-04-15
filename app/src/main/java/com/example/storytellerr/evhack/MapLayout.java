@@ -65,6 +65,11 @@ public class MapLayout extends FragmentActivity implements OnMapReadyCallback,Go
     ArrayList<Double> lat = new ArrayList<Double>();
     ArrayList<Double> lon = new ArrayList<Double>();
     ArrayList<String> shopname = new ArrayList<String>();
+    ArrayList<Integer> stars = new ArrayList<Integer>();
+    ArrayList<Long> phone = new ArrayList<Long>();
+    ArrayList<String> address = new ArrayList<String>();
+
+
 
     ProgressBar progressBar,progressBar2;
     Button btn1,btn2;
@@ -124,6 +129,11 @@ public class MapLayout extends FragmentActivity implements OnMapReadyCallback,Go
                     lat.add((Double) data.child("lat").getValue());
                     lon.add((Double) data.child("lon").getValue());
                     shopname.add(data.child("name").getValue().toString());
+                    Log.d("fe","f");
+                    //phone.add(Long.parseLong(data.child("phone").getValue().toString()));
+                    Log.d("fe1","f");
+                    stars.add(Integer.parseInt(data.child("stars").getValue().toString()));
+                    address.add(data.child("address").getValue().toString());
                 }
                 SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                         .findFragmentById(R.id.map);
@@ -325,8 +335,19 @@ public class MapLayout extends FragmentActivity implements OnMapReadyCallback,Go
        Float distance= currentpos.distanceTo(destination);
         args.putString("distance", distance.toString());
         BottomSheetFragment bottomSheetFragment = new BottomSheetFragment();
+        args.putString("stars",stars.get(Integer.parseInt(id)).toString());
+        args.putString("address",address.get(Integer.parseInt(id)));
+       // args.putString("phone",phone.get(Integer.parseInt(id)).toString());
+
         bottomSheetFragment.setArguments(args);
         bottomSheetFragment.show(getSupportFragmentManager(), bottomSheetFragment.getTag());
+
+        //data retrieveing
+
+
+
+
+
         return false;
     }
 
